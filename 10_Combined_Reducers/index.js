@@ -3,14 +3,14 @@ const redux = require("redux");
 const createStore = redux.createStore;
 const combineReducers = redux.combineReducers;
 
-function buyCake() {  // Action :=  function that return an object of any shape
+function buyCake() {  // Action := function that return an object of any shape
     return { 
         type: "BUY_CAKE",
         info: "First redux action"
     }
 }
 
-function buyIceCream() {  // Action :=  function that return an object of any shape
+function buyIceCream() {  // Action := function that return an object of any shape
     return { 
         type: "BUY_ICE_CREAM",
         info: "First redux action"
@@ -39,7 +39,6 @@ const reducerCakes = (state = initialStateCakes, action) => {
     }
     return state;
 }
-
 
 const reducerIceCream = (state = initialStateIceCream, action) => {
     switch(action.type) {

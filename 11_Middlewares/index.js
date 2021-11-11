@@ -63,14 +63,9 @@ const reducer = combineReducers({
     iceCream: reducerIceCream
 })
 
-const store = createStore(reducer, {}, applyMiddleware(logger)); 
+const store = createStore(reducer, applyMiddleware(logger)); 
 
 console.log('Initial state', store.getState())
-
-//  fat arrow function get fired when the store is updated
-// store.subscribe( () => { 
-//   console.log("Store updated ", store.getState());
-// })
 
 store.subscribe( () => {}) // now logger handle store.subscribe()
 

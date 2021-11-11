@@ -16,18 +16,6 @@ const initialState = {
     numberOfCakes: 10
 };
 
-// const reducer = (state = initialState, action) => {
-//     switch(action.type) {
-//         case 'BUY_CAKE': 
-//             return {
-//                 // numberOfCakes: state.numberOfCakes - 1 // do not mutate the initial state, just create create a new one
-//                 ...state,
-//                 numberOfCakes: state.numberOfCakes - 1
-//             }
-//         default: 
-//             return state;
-//     }
-// }
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
@@ -52,6 +40,6 @@ store.subscribe( () => { //  fat arrow function get fired when the store is upda
   console.log("Store updated ", store.getState());
 })
 
-store.dispatch( buyCake())
-store.dispatch( buyCake())
-store.dispatch( buyCake())
+store.dispatch(buyCake());
+store.dispatch(buyCake());
+store.dispatch(buyCake());

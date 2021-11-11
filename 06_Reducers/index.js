@@ -1,5 +1,4 @@
 
-
 //----------------------------------------------
 
 function buyCake() {  // Action :=  function that return an object of any shape
@@ -11,7 +10,7 @@ function buyCake() {  // Action :=  function that return an object of any shape
 
 //-----------------------------------------------
 
-// reducer = (previousState, action) => newState;  // retunrs always a new state
+// reducer = (previousState, action) => newState;  // returns always a new state
 
 const initialState = {
     numberOfCakes: 10
@@ -20,7 +19,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch(action.type) {
         case 'BUY_CAKE': 
-            state=  {
+            state = {
                 // numberOfCakes: state.numberOfCakes - 1 // do not mutate the initial state, just create create a new one
                 ...state,
                 numberOfCakes: state.numberOfCakes - 1
@@ -28,7 +27,5 @@ const reducer = (state = initialState, action) => {
             break;
         default: 
             return state;
-
-    }
-
+    } 
 }

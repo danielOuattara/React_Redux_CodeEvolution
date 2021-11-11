@@ -1,5 +1,5 @@
 
-//========================================== 2 separate reducers
+// ========================================== 2 separate reducers
 
 // const redux = require("redux");
 // const createStore = redux.createStore;
@@ -18,7 +18,7 @@
 //     }
 // }
 
-// const initialState = {// globale state
+// const initialState = { // globale state
 //     numberOfCakes: 10,
 //     numbersOfIceCreams: 20,
 // };
@@ -65,6 +65,7 @@
 const redux = require("redux");
 const createStore = redux.createStore;
 
+
 function buyCake() {  // Action :=  function that return an object of any shape
     return { 
         type: "BUY_CAKE",
@@ -102,7 +103,6 @@ const reducerCakes = (state = initialStateCakes, action) => {
     return state;
 }
 
-
 const reducerIceCream = (state = initialStateIceCream, action) => {
     switch(action.type) {
         case 'BUY_ICE_CREAM': 
@@ -118,7 +118,7 @@ const reducerIceCream = (state = initialStateIceCream, action) => {
     return state;
 }
 
-const store = createStore(reducer); // redux creastore accepts only 1 reducers
+const store = createStore(combineReducers); // redux creastore accepts only 1 reducers
                                     // how to make redux know and accepts 2 or + reduccres ??
                                     // next tutorial ... 
 
@@ -128,8 +128,8 @@ store.subscribe( () => { //  fat arrow function get fired when the store is upda
   console.log("Store updated ", store.getState());
 })
 
-store.dispatch( buyCake())
-store.dispatch( buyCake())
-store.dispatch( buyCake())
-store.dispatch( buyIceCream())
-store.dispatch( buyIceCream())
+store.dispatch(buyCake());
+store.dispatch(buyCake());
+store.dispatch(buyCake());
+store.dispatch(buyIceCream());
+store.dispatch(buyIceCream());
