@@ -7,6 +7,7 @@ function CakeContainer(props) {
         <div>
             <h2>Number of Cakes {props.numberOfCakes}</h2>
             <button onClick={() =>props.buyCake()}>Buy cake</button>
+            <hr />
         </div>
     )
 }

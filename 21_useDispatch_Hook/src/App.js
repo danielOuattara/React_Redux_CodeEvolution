@@ -6,7 +6,7 @@ import CakeContainerHooks from './components/CakeContainerHooks';
 
 function App() {
   return (
-    <Provider store={store} className="app">
+    <Provider store={store}>
       <div className="App">
         <CakeContainer />
         <CakeContainerHooks />

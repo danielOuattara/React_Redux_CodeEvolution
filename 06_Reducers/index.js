@@ -1,8 +1,7 @@
-
 //----------------------------------------------
 
-function buyCake() {  // Action :=  function that return an object of any shape
-    return { 
+function buyCake() { // Action :=  function that return an object of any shape
+    return {
         type: "BUY_CAKE",
         info: "First redux action"
     }
@@ -17,15 +16,16 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-    switch(action.type) {
-        case 'BUY_CAKE': 
+    switch (action.type) {
+        case 'BUY_CAKE':
             state = {
                 // numberOfCakes: state.numberOfCakes - 1 // do not mutate the initial state, just create create a new one
                 ...state,
                 numberOfCakes: state.numberOfCakes - 1
             }
             break;
-        default: 
+        default:
             return state;
-    } 
+    }
+    return state;
 }

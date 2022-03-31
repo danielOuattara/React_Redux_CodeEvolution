@@ -1,13 +1,14 @@
-
 const redux = require("redux");
 const createStore = redux.createStore;
 
+//state
 const initialState = {
     loading: false,
     users: [],
     error: '',
 }
 
+// actions
 const FETCH_USERS_REQUEST = 'FETCH_USERS_REQUEST';
 const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS';
 const FETCH_USERS_FAILURE = 'FETCH_USERS_FAILURE';
@@ -32,17 +33,18 @@ const fetchUsersFailure = (error) => {
     }
 }
 
-const reducer = ( state = initialState, action ) => {
+//reducer
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_USERS_REQUEST:
-            state =  {
+            state = {
                 ...state,
                 loading: true,
             }
             break;
-            
+
         case FETCH_USERS_SUCCESS:
-            state =  {
+            state = {
                 ...state,
                 loading: false,
                 users: action.payload,
@@ -51,10 +53,10 @@ const reducer = ( state = initialState, action ) => {
             break;
 
         case FETCH_USERS_FAILURE:
-            state =  {
+            state = {
                 ...state,
                 loading: false,
-                users : [],
+                users: [],
                 error: action.payload,
             }
             break;
@@ -62,4 +64,5 @@ const reducer = ( state = initialState, action ) => {
     return state;
 }
 
+// store
 const store = createStore(reducer);

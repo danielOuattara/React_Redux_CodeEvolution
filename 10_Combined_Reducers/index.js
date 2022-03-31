@@ -1,7 +1,5 @@
 
-const redux = require("redux");
-const createStore = redux.createStore;
-const combineReducers = redux.combineReducers;
+const { createStore ,combineReducers } =  require('redux');
 
 function buyCake() {  // Action := function that return an object of any shape
     return { 

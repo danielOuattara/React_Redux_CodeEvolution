@@ -1,9 +1,7 @@
 
-const redux = require("redux");
+const { createStore, combineReducers, applyMiddleware } = require('redux');
 const logger = require('redux-logger').createLogger();
-const createStore = redux.createStore;
-const combineReducers = redux.combineReducers;
-const applyMiddleware = redux.applyMiddleware;
+
 
 
 function buyCake() {  // Action :=  function that return an object of any shape
@@ -67,7 +65,7 @@ const store = createStore(reducer, applyMiddleware(logger));
 
 console.log('Initial state', store.getState())
 
-store.subscribe( () => {}) // now logger handle store.subscribe()
+// store.subscribe( () => {}) // now logger handle store.subscribe()
 
 
 store.dispatch( buyCake())

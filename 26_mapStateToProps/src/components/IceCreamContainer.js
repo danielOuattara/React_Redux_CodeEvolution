@@ -22,14 +22,14 @@ function IceCreamContainer(props) {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
+    // console.log(state)
     return {
         numberOfIceCreams: state.iceCream.numberOfIceCreams
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    console.log(dispatch)
+    // console.log(dispatch)
     return {
         buyIceCream: (quantity) => { dispatch(buyIceCream(quantity))}
     }

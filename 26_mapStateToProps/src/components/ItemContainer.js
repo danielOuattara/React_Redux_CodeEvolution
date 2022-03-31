@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux';
 
-// this component display the number of both cakes and ice cream  in the store
+// This component display the number of both cakes and ice cream  in the store
 
 function ItemContainer(props) {
+
     return (
         <div>
-            <h2>Items : {props.item} </h2>
-            
+            <h2>Items : {props.item} {props.cake ?  'cakes': 'ice creams'} </h2>
         </div>
     )
 }
